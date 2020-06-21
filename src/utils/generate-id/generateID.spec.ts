@@ -9,6 +9,6 @@ it('should generate unique id', () => {
 });
 
 it('should contain the prefix as "test"', () => {
-  const prefix: string = 'test';
+  const prefix = 'test';
   expect(generateID(prefix)).toContain(prefix);
 });
