@@ -19,7 +19,7 @@
   },
   "scripts": {
     "_build-ts": "tsc",
-    "_clean": "rm -rf ./dist",
+    "_clean": "rm -rf ./es",
     "_eslint": "eslint '*/**/*.{ts,tsx}'",
     "build": "npm run _clean && npm run _eslint && npm run _build-ts",
     "test": "jest --notify --forceExit --coverage --verbose --config ./jest.conf.json",

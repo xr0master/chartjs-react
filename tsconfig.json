@@ -15,7 +15,7 @@
     "sourceMap": false,
     "jsx": "react",
     "baseUrl": ".",
-    "outDir": "dist",
+    "outDir": "es",
     "paths": {
       "*": ["src/*"]
     }

@@ -4,6 +4,7 @@
 node_modules/
 coverage/
 dist/
+es/
 .idea/
 *.swp
 .DS_Store
