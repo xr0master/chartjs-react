@@ -51,5 +51,9 @@
   "prettier": {
     "trailingComma": "all",
     "singleQuote": true
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/xr0master/chartjs-react/issues"
+  },
+  "homepage": "https://github.com/xr0master/chartjs-react#readme"
 }
