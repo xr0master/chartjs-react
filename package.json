@@ -1,0 +1,51 @@
+{
+  "name": "chartjs-react",
+  "version": "2.0.0",
+  "description": "TypeScript React wrapper for Chart.js with hooks and tooltip",
+  "private": false,
+  "author": "Sergey Khomushin <xr0master@gmail.com>",
+  "license": "MIT",
+  "main": "es/ReactChart.js",
+  "types": "es/ReactChart.d.ts",
+  "keywords": [
+    "chartjs react",
+    "chartjs hooks",
+    "chartjs react typescript",
+    "chartjs tooltip"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xr0master/chartjs-react.git"
+  },
+  "scripts": {
+    "_build-ts": "tsc",
+    "_clean": "rm -rf ./dist",
+    "_eslint": "",
+    "build": "npm run _clean && npm run _eslint && npm run _build-ts",
+    "test": "jest --notify --forceExit --coverage --verbose --config ./jest.conf.json",
+    "lint": "tsc --noEmit && npm run _eslint"
+  },
+  "peerDependencies": {
+    "chart.js": ">=2.9.0",
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/chart.js": "2.9.22",
+    "@types/jest": "26.0.0",
+    "@types/node": "14.0.13",
+    "@types/react": "16.9.38",
+    "chart.js": "2.9.3",
+    "jest": "26.0.1",
+    "prettier": "2.0.5",
+    "react": "16.13.1",
+    "ts-jest": "26.1.0",
+    "typescript": "3.9.5"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  }
+}
