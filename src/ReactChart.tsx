@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
-import ChartJS, {
+import { Chart as ChartJS } from 'chart.js';
+
+import type {
+  Chart,
   ChartOptions,
   ChartData,
   ChartType,
@@ -29,10 +32,10 @@ export const ReactChart = ({
   height,
   width,
 }: ChartProps) => {
-  const chartInstance = useRef<ChartJS>({
+  const chartInstance = useRef<Chart>({
     update: noop,
     destroy: noop,
-  } as ChartJS);
+  } as Chart);
   const CHART_ID = useMemo(() => generateID('Chart'), []);
 
   useEffect(() => {
@@ -57,7 +60,7 @@ export const ReactChart = ({
         plugins,
       });
     }
-  }, []); // eslint-disable-line
+  }, []);
 
   return <canvas ref={nodeRef} height={height} width={width} id={CHART_ID} />;
 };
