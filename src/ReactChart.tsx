@@ -64,4 +64,4 @@ export const ReactChart = ({
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore the type is not updated for v3
-ReactChart.register = ChartJS.register || noop;
+ReactChart.register = (ChartJS.register as (...args: any[]) => void) || noop;
