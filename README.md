@@ -3,6 +3,7 @@
 ## Intro
 
 Tiny, written in TS, based on React hooks wrapper for Chart.js
+V3 supports Chart.js v3 (alpha.2)
 
 ## Why?
 
@@ -40,15 +41,66 @@ TODO
 
 ## Examples
 
-**add bar chart**
+**Bar chart**
 
 ``` js
 import { ReactChart } from 'chartjs-react';
 
-const BarChart = () => {
-  const chartOption = {}; // options of chart
-  const chartData = {}; // data of chart
+// options of chart v2
+const chartOption = {};
+// data of chart v2
+const chartData = {};
 
+const BarChart = () => {
+  return (
+    <ReactChart
+      type="bar"
+      data={chartData}
+      options={chartOption}
+      height={400}
+    />
+  );
+};
+```
+
+**Bar chart on Chart.js v3 (date-fns)**
+
+``` ts
+import {
+  BarController,
+  LinearScale,
+  Rectangle,
+  TimeScale,
+  Tooltip,
+} from 'chart.js';
+import 'chartjs-adapter-date-fns';
+import { enUS } from 'date-fns/locale';
+import { ReactChart } from 'chartjs-react';
+
+// Register modules,
+// this example for time scale and linear scale
+ReactChart.register(BarController, LinearScale, Rectangle, TimeScale, Tooltip);
+
+// options of chart similar to v2 with a few changes
+// https://www.chartjs.org/docs/next/getting-started/v3-migration/
+const chartOption = {
+  scales: {
+    x: {
+      type: 'time',
+      adapters: {
+        date: enUS,
+      },
+    },
+    y: {
+      type: 'linear',
+    },
+  },
+};
+
+// data of chart similar to v2, check the migration guide
+const chartData = {};
+
+const BarChart = () => {
   return (
     <ReactChart
       type="bar"

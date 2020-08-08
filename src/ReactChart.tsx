@@ -61,3 +61,7 @@ export const ReactChart = ({
 
   return <canvas ref={nodeRef} height={height} width={width} id={CHART_ID} />;
 };
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore the type is not updated for v3
+ReactChart.register = ChartJS.register || noop;
