@@ -1,24 +1,23 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
-import { Chart as ChartJS } from 'chart.js';
+import { Chart } from 'chart.js';
 
 import type {
-  Chart,
-  ChartOptions,
-  ChartData,
-  ChartType,
-  ChartUpdateProps,
-  PluginServiceRegistrationOptions,
+  IChartOptions,
+  IChartData,
+  IChartType,
+  IPlugin,
+  UpdateMode,
 } from 'chart.js';
 
 import { generateID } from 'utils/generate-id/generateID';
 import { noop } from 'utils/noop';
 
 interface ChartProps {
-  data: ChartData;
-  options: ChartOptions;
-  type: ChartType;
-  plugins?: Array<PluginServiceRegistrationOptions>;
-  updateConfig?: ChartUpdateProps;
+  data: IChartData;
+  options: IChartOptions;
+  type: IChartType;
+  plugins?: IPlugin[];
+  updateMode?: UpdateMode;
   height?: number;
   width?: number;
 }
@@ -28,7 +27,7 @@ export const ReactChart = ({
   options,
   type,
   plugins,
-  updateConfig,
+  updateMode,
   height,
   width,
 }: ChartProps) => {
@@ -42,29 +41,26 @@ export const ReactChart = ({
     chartInstance.current.options = options;
     chartInstance.current.data = data;
 
-    chartInstance.current.update({
-      duration: 300,
-      lazy: false,
-      ...updateConfig,
-    });
+    chartInstance.current.update(updateMode);
   }, [data, options]);
 
-  const nodeRef = useCallback((node) => {
-    chartInstance.current.destroy();
+  const nodeRef = useCallback<(instance: HTMLCanvasElement | null) => void>(
+    (node) => {
+      chartInstance.current.destroy();
 
-    if (node) {
-      chartInstance.current = new ChartJS(node, {
-        type,
-        data,
-        options,
-        plugins,
-      });
-    }
-  }, []);
+      if (node) {
+        chartInstance.current = new Chart(node, {
+          type,
+          data,
+          options,
+          plugins,
+        });
+      }
+    },
+    [],
+  );
 
   return <canvas ref={nodeRef} height={height} width={width} id={CHART_ID} />;
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore the type is not updated for v3
-ReactChart.register = (ChartJS.register as (...args: any[]) => void) || noop;
+ReactChart.register = Chart.register || noop;

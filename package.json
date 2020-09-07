@@ -26,7 +26,7 @@
     "lint": "tsc --noEmit && npm run _eslint"
   },
   "peerDependencies": {
-    "chart.js": ">=3.0.0-beta",
+    "chart.js": ">=3.0.0-beta.3",
     "react": ">=16.8.0"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "@types/react": "16.9.49",
     "@typescript-eslint/eslint-plugin": "4.0.1",
     "@typescript-eslint/parser": "4.0.1",
-    "chart.js": "3.0.0-beta",
+    "chart.js": "3.0.0-beta.3",
     "eslint": "7.8.1",
     "eslint-plugin-react": "7.20.6",
     "jest": "26.4.2",
