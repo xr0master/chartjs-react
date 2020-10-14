@@ -15,10 +15,7 @@
     "sourceMap": false,
     "jsx": "react",
     "baseUrl": ".",
-    "outDir": "es",
-    "paths": {
-      "*": ["src/*"]
-    }
+    "outDir": "es"
   },
   "include": ["src/**/*"],
   "exclude": ["**/*.spec.ts"],
