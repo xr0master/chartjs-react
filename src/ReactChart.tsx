@@ -9,8 +9,8 @@ import type {
   UpdateMode,
 } from 'chart.js';
 
-import { generateID } from 'utils/generate-id/generateID';
-import { noop } from 'utils/noop';
+import { generateID } from './utils/generate-id/generateID';
+import { noop } from './utils/noop';
 
 interface ChartProps {
   data: IChartData;
