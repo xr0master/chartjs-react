@@ -4,7 +4,7 @@
 
 Tiny, written in TS, based on React hooks wrapper for Chart.js
 
-**V3 supports Chart.js v3 (beta.3)**
+**V3 supports Chart.js v3 (beta.5)**
 
 ## Why?
 
@@ -70,7 +70,7 @@ const BarChart = () => {
 import {
   BarController,
   LinearScale,
-  Rectangle,
+  BarElement,
   TimeScale,
   Tooltip,
 } from 'chart.js';
@@ -80,7 +80,7 @@ import { ReactChart } from 'chartjs-react';
 
 // Register modules,
 // this example for time scale and linear scale
-ReactChart.register(BarController, LinearScale, Rectangle, TimeScale, Tooltip);
+ReactChart.register(BarController, LinearScale, BarElement, TimeScale, Tooltip);
 
 // options of chart similar to v2 with a few changes
 // https://www.chartjs.org/docs/next/getting-started/v3-migration/
