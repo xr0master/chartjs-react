@@ -2,21 +2,22 @@ import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import { Chart } from 'chart.js';
 
 import type {
-  IChartOptions,
-  IChartData,
-  IChartType,
-  IPlugin,
+  ChartOptions,
+  ChartData,
+  ChartType,
+  Plugin,
   UpdateMode,
+  DefaultDataPoint,
 } from 'chart.js';
 
 import { generateID } from './utils/generate-id/generateID';
 import { noop } from './utils/noop';
 
 interface ChartProps {
-  data: IChartData;
-  options: IChartOptions;
-  type: IChartType;
-  plugins?: IPlugin[];
+  data: ChartData;
+  options: ChartOptions;
+  type: ChartType;
+  plugins?: Plugin[];
   updateMode?: UpdateMode;
   height?: number;
   width?: number;
@@ -31,7 +32,9 @@ export const ReactChart = ({
   height,
   width,
 }: ChartProps) => {
-  const chartInstance = useRef<Chart>({
+  const chartInstance = useRef<
+    Chart<ChartType, DefaultDataPoint<ChartType>, unknown>
+  >({
     update: noop,
     destroy: noop,
   } as Chart);
