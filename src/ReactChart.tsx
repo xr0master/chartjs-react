@@ -7,7 +7,6 @@ import type {
   ChartType,
   Plugin,
   UpdateMode,
-  DefaultDataPoint,
 } from 'chart.js';
 
 import { generateID } from './utils/generate-id/generateID';
@@ -32,9 +31,7 @@ export const ReactChart = ({
   height,
   width,
 }: ChartProps) => {
-  const chartInstance = useRef<
-    Chart<ChartType, DefaultDataPoint<ChartType>, unknown>
-  >({
+  const chartInstance = useRef<Chart>({
     update: noop,
     destroy: noop,
   } as Chart);
