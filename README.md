@@ -4,7 +4,7 @@
 
 Tiny, written in TS, based on React hooks wrapper for Chart.js
 
-**V3 supports Chart.js v3 (beta.7)**
+**Chart.js v3 (beta.7) is supported**
 
 ## Why?
 
@@ -14,7 +14,8 @@ many years ago has a bunch of legacy code and issues
 
 The main idea was to completely rewrite code into modern React with hooks.
 
-The second goal, add custom React tooltips for Chart.js (PoC is done)
+The second goal, add custom React tooltips for Chart.js
+(PoC is done, it's waiting for release)
 
 ## Version
 
@@ -38,31 +39,9 @@ $ npm install chartjs-react
 
 ## Documentation
 
-TODO
+TODO 
 
 ## Examples
-
-**Bar chart**
-
-``` js
-import { ReactChart } from 'chartjs-react';
-
-// options of chart v2
-const chartOption = {};
-// data of chart v2
-const chartData = {};
-
-const BarChart = () => {
-  return (
-    <ReactChart
-      type="bar"
-      data={chartData}
-      options={chartOption}
-      height={400}
-    />
-  );
-};
-```
 
 **Bar chart on Chart.js v3 (date-fns)**
 
@@ -115,7 +94,7 @@ const BarChart = () => {
 
 ## TODO
 
-- Added chart tooltip as children
+- Added chart tooltip as children (after release v3)
 
 ## License
 
