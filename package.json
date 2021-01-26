@@ -1,6 +1,6 @@
 {
   "name": "chartjs-react",
-  "version": "3.1.6",
+  "version": "3.1.7",
   "description": "TypeScript React wrapper for Chart.js with hooks and tooltip",
   "private": false,
   "author": "Sergey Khomushin <xr0master@gmail.com>",
