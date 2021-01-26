@@ -4,7 +4,7 @@
 
 Tiny, written in TS, based on React hooks wrapper for Chart.js
 
-**Chart.js v3 (beta.7) is supported**
+**Chart.js v3 (beta.9) is supported**
 
 ## Why?
 
