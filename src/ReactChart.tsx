@@ -12,7 +12,7 @@ import type {
 import { generateID } from './utils/generate-id/generateID';
 import { noop } from './utils/noop';
 
-interface ChartProps {
+export interface ChartProps {
   data: ChartData;
   options: ChartOptions;
   type: ChartType;
