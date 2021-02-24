@@ -38,8 +38,8 @@ export const ReactChart = ({
   const CHART_ID = useMemo(() => generateID('Chart'), []);
 
   useEffect(() => {
-    chartInstance.current.options = options;
     chartInstance.current.data = data;
+    chartInstance.current.options = options;
 
     chartInstance.current.update(updateMode);
   }, [data, options]);
