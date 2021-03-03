@@ -1,4 +1,11 @@
-import React, { useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { 
+  useEffect, 
+  useRef, 
+  useCallback, 
+  useImperativeHandle,
+  useMemo, 
+  forwardRef
+} from 'react';
 import { Chart } from 'chart.js';
 
 import type {
@@ -22,45 +29,41 @@ export interface ChartProps {
   width?: number;
 }
 
-export const ReactChart = ({
-  data,
-  options,
-  type,
-  plugins,
-  updateMode,
-  height,
-  width,
-}: ChartProps) => {
-  const chartInstance = useRef<Chart>({
-    update: noop,
-    destroy: noop,
-  } as Chart);
-  const CHART_ID = useMemo(() => generateID('Chart'), []);
+export const ReactChart = forwardRef<Chart, ChartProps>(
+  ({ data, options, type, plugins, updateMode, height, width }, ref) => {
+    const chartInstance = useRef<Chart>({
+      update: noop,
+      destroy: noop
+    } as Chart);
+    const CHART_ID = useMemo(() => generateID("Chart"), []);
 
-  useEffect(() => {
-    chartInstance.current.data = data;
-    chartInstance.current.options = options;
+    useImperativeHandle(ref, () => chartInstance.current, []);
 
-    chartInstance.current.update(updateMode);
-  }, [data, options]);
+    useEffect(() => {
+      chartInstance.current.data = data;
+      chartInstance.current.options = options;
 
-  const nodeRef = useCallback<(instance: HTMLCanvasElement | null) => void>(
-    (node) => {
-      chartInstance.current.destroy();
+      chartInstance.current.update(updateMode);
+    }, [data, options]);
 
-      if (node) {
-        chartInstance.current = new Chart(node, {
-          type,
-          data,
-          options,
-          plugins,
-        });
-      }
-    },
-    [],
-  );
+    const nodeRef = useCallback<(instance: HTMLCanvasElement | null) => void>(
+      (node) => {
+        chartInstance.current.destroy();
+        if (node) {
+          const ci = new Chart(node, {
+            type,
+            data,
+            options,
+            plugins
+          });
+          chartInstance.current = ci;
+        }
+      },
+      []
+    );
 
-  return <canvas ref={nodeRef} height={height} width={width} id={CHART_ID} />;
-};
+    return <canvas ref={nodeRef} height={height} width={width} id={CHART_ID} />;
+  }
+);
 
-ReactChart.register = Chart.register || noop;
+export const register = Chart.register || noop;
