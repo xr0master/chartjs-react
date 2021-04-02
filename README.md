@@ -92,6 +92,30 @@ const BarChart = () => {
 };
 ```
 
+**Get the chart instance**
+
+``` ts
+import { Chart } from 'chart.js';
+
+onEvent = () => {
+  const myChartInstance = Chart.getChart('unique-chart-id');
+  // Do your stuff with the chart instance
+  // Note: the chart should be mounted
+};
+
+const BarChart = () => {
+  return (
+    <ReactChart
+      id="unique-chart-id"
+      type="bar"
+      data={chartData}
+      options={chartOption}
+      height={400}
+    />
+  );
+};
+```
+
 ## TODO
 
 - Added chart tooltip as children (after release v3)
