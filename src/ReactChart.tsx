@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import { Chart } from 'chart.js';
 
 import type {
@@ -18,11 +18,13 @@ export interface ChartProps {
   type: ChartType;
   plugins?: Plugin[];
   updateMode?: UpdateMode;
+  id?: string;
   height?: number;
   width?: number;
 }
 
 export const ReactChart = ({
+  id,
   data,
   options,
   type,
@@ -35,7 +37,7 @@ export const ReactChart = ({
     update: noop,
     destroy: noop,
   } as Chart);
-  const CHART_ID = useMemo(() => generateID('Chart'), []);
+  const [CHART_ID] = useState(id || generateID('Chart'));
 
   useEffect(() => {
     chartInstance.current.data = data;
