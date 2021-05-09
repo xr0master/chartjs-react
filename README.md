@@ -2,9 +2,7 @@
 
 ## Intro
 
-Tiny, written in TS, based on React hooks wrapper for Chart.js
-
-**Chart.js v3 (rc.6) is supported**
+Tiny, written in TS, based on React hooks wrapper for Chart.js v3
 
 ## Why?
 
