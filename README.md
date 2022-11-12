@@ -1,8 +1,9 @@
-# chartjs-react
-
-## Intro
+# Chart.js React
 
 Tiny, written in TS, based on React hooks wrapper for Chart.js v3
+
+[![codecov](https://codecov.io/gh/xr0master/chartjs-react/branch/master/graph/badge.svg)](https://codecov.io/gh/xr0master/chartjs-react)
+[![npm version](https://img.shields.io/npm/v/chartjs-react.svg)](https://www.npmjs.com/package/chartjs-react)
 
 ## Why?
 
@@ -13,7 +14,6 @@ many years ago has a bunch of legacy code and issues
 The main idea was to completely rewrite code into modern React with hooks.
 
 The second goal, add custom React tooltips for Chart.js
-(PoC is done, it's waiting for release)
 
 ## Version
 
@@ -37,13 +37,13 @@ $ npm install chartjs-react
 
 ## Documentation
 
-TODO 
+TODO tooltips
 
 ## Examples
 
 **Bar chart on Chart.js v3 (date-fns)**
 
-``` ts
+```tsx
 import {
   BarController,
   LinearScale,
@@ -92,7 +92,7 @@ const BarChart = () => {
 
 **Get the chart instance**
 
-``` ts
+```tsx
 import { Chart } from 'chart.js';
 
 onEvent = () => {
