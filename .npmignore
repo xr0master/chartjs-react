@@ -15,6 +15,7 @@ Thumbs.db
 .gitignore
 .npmignore
 jest.config.js
+setupTests.ts
 tsconfig.json
 
 # source code files

@@ -1,17 +1,24 @@
-module.exports = {
+/** @type {import('jest').Config} */
+const jestConfig = {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   transform: {
-    '^.+\\.ts?$': ['ts-jest', {
-      diagnostics: {
-        warnOnly: true,
+    '^.+\\.ts?$': [
+      'ts-jest',
+      {
+        diagnostics: {
+          warnOnly: true,
+        },
       },
-    }],
+    ],
   },
-  testRegex: '((\\.|/)(spec))\\.(ts?)$',
-  moduleFileExtensions: ['ts', 'js'],
+  testRegex: '((\\.|/)(spec))\\.(tsx?)$',
+  moduleFileExtensions: ['js', 'ts', 'tsx'],
   modulePaths: ['src'],
   testPathIgnorePatterns: ['/node_modules/'],
-  testEnvironment: 'node',
+  setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
+  testEnvironment: 'jest-environment-jsdom',
   preset: 'ts-jest',
 };
+
+module.exports = jestConfig;

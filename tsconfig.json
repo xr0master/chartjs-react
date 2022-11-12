@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "moduleResolution": "node",
+    "target": "ES6",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "skipLibCheck": true,
     "declaration": true,
@@ -13,11 +13,10 @@
     "forceConsistentCasingInFileNames": true,
     "removeComments": true,
     "sourceMap": false,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "outDir": "es"
   },
-  "include": ["src/**/*"],
-  "exclude": ["**/*.spec.ts"],
-  "compileOnSave": false
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
