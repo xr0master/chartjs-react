@@ -46,7 +46,7 @@ export const ReactChart = ({
     chartInstance.current.update(updateMode);
   }, [data, options]);
 
-  const nodeRef = useCallback<(instance: HTMLCanvasElement | null) => void>(
+  const nodeRef = useCallback<(node: HTMLCanvasElement | null) => void>(
     (node) => {
       chartInstance.current.destroy();
 
