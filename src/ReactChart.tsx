@@ -62,7 +62,15 @@ export const ReactChart = ({
     [],
   );
 
-  return <canvas ref={nodeRef} height={height} width={width} id={CHART_ID} />;
+  return (
+    <canvas
+      ref={nodeRef}
+      height={height}
+      width={width}
+      id={CHART_ID}
+      role="chart"
+    />
+  );
 };
 
 ReactChart.register = Chart.register || noop;
