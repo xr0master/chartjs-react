@@ -23,6 +23,10 @@ The version format is X.Y.Z, where
 - Y - is chartjs-react major version
 - Z - is chartjs-react minor version
 
+### Current latest versions
+- 3.8.0 supports Chart.js version 3.9.1 and above 
+- 4.0.0 supports Chart.js version 4.0.1 and above 
+
 ## Support the project
 
 If you like to use this module please click the star button - it is very motivating.
