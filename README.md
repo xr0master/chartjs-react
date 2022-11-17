@@ -1,6 +1,6 @@
 # Chart.js React
 
-Tiny, written in TS, based on React hooks wrapper for Chart.js v3
+Tiny, written in TS, based on React hooks wrapper for Chart.js v4
 
 [![codecov](https://codecov.io/gh/xr0master/chartjs-react/branch/master/graph/badge.svg)](https://codecov.io/gh/xr0master/chartjs-react)
 [![npm version](https://img.shields.io/npm/v/chartjs-react.svg)](https://www.npmjs.com/package/chartjs-react)
@@ -22,6 +22,10 @@ The version format is X.Y.Z, where
 - X - is chart.js major version
 - Y - is chartjs-react major version
 - Z - is chartjs-react minor version
+
+### Current latest versions
+- 3.8.0 supports Chart.js version 3.9.1 and above 
+- 4.0.0 supports Chart.js version 4.0.1 and above 
 
 ## Support the project
 

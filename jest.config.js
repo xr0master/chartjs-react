@@ -15,6 +15,9 @@ const jestConfig = {
   testRegex: '((\\.|/)(spec))\\.(tsx?)$',
   moduleFileExtensions: ['js', 'ts', 'tsx'],
   modulePaths: ['src'],
+  moduleNameMapper: {
+    'chart.js': '<rootDir>/node_modules/chart.js/dist/chart.umd.js',
+  },
   testPathIgnorePatterns: ['/node_modules/'],
   setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
   testEnvironment: 'jest-environment-jsdom',
