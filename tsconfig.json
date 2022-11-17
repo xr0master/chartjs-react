@@ -17,6 +17,6 @@
     "baseUrl": ".",
     "outDir": "es"
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "include": ["src"],
+  "exclude": ["**/*.spec.ts", "**/*.spec.tsx"]
 }
