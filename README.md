@@ -1,6 +1,6 @@
 # Chart.js React
 
-Tiny, written in TS, based on React hooks wrapper for Chart.js v3
+Tiny, written in TS, based on React hooks wrapper for Chart.js v4
 
 [![codecov](https://codecov.io/gh/xr0master/chartjs-react/branch/master/graph/badge.svg)](https://codecov.io/gh/xr0master/chartjs-react)
 [![npm version](https://img.shields.io/npm/v/chartjs-react.svg)](https://www.npmjs.com/package/chartjs-react)
