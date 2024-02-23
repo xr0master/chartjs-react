@@ -1,4 +1,11 @@
-import '@testing-library/jest-dom/extend-expect';
+import { jest, expect } from '@jest/globals';
+import '@testing-library/jest-dom';
+import { TestingLibraryMatchers } from '@testing-library/jest-dom/types/matchers-standalone';
+
+declare module '@jest/expect' {
+  export interface Matchers<R>
+    extends TestingLibraryMatchers<typeof expect.stringContaining, R> {}
+}
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,

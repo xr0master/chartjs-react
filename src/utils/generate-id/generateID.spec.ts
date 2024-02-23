@@ -1,3 +1,4 @@
+import { it, expect } from '@jest/globals';
 import { generateID } from './generateID';
 
 it('should be 8 symbols', () => {

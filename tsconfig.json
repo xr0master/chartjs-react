@@ -17,6 +17,5 @@
     "baseUrl": ".",
     "outDir": "es"
   },
-  "include": ["src"],
-  "exclude": ["**/*.spec.ts", "**/*.spec.tsx"]
+  "include": ["src", "setupTests.ts"]
 }
