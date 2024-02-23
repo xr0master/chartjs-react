@@ -17,6 +17,7 @@ Thumbs.db
 jest.config.js
 setupTests.ts
 tsconfig.json
+tsconfig.build.json
 
 # source code files
 src/
