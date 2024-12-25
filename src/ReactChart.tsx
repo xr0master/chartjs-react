@@ -73,4 +73,6 @@ export const ReactChart = ({
   );
 };
 
+// The `register` is a static method and can be safely bounded
+// eslint-disable-next-line @typescript-eslint/unbound-method
 ReactChart.register = Chart.register || noop;

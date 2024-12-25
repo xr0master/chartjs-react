@@ -20,7 +20,7 @@ const jestConfig = {
   },
   testPathIgnorePatterns: ['/node_modules/'],
   setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
-  testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: '@happy-dom/jest-environment',
   preset: 'ts-jest',
 };
 

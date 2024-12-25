@@ -13,7 +13,6 @@ jest.mock('chart.js', () => ({
 }));
 
 it('should be in document', function () {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  render(<ReactChart type="line" options={{}} data={[] as any} />);
+  render(<ReactChart type="line" options={{}} data={{ datasets: [] }} />);
   expect(screen.getByRole('chart')).toBeInTheDocument();
 });
