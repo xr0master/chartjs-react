@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@happy-dom/jest-environment": "^15.11.7",
     "@stylistic/eslint-plugin": "^2.12.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
